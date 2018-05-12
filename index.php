@@ -95,6 +95,9 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
                             $babi=file_get_contents('http://farkhan.000webhostapp.com/nutshell/babi.php?'.http_build_query($data));
                             $result = $bot->replyText($event['replyToken'], $babi);
                         }
+                        if ($event['message']['text'] == 'hai') {
+                            $result = $bot->replyText($event['replyToken'], "hello");
+                        }
                         
                     }
                 }
